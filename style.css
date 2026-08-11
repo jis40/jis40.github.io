@@ -25,7 +25,7 @@ body{
     
     & + .section{
         padding: 5px 20px;
-        clear: both;
+        /* clear: both; */
         margin-top: 10px;
     }
 }
