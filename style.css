@@ -1,0 +1,56 @@
+* , *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    padding: 60px 0px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+.section{
+    display: block;
+    margin: 0px auto;
+    padding: 0px 10px;
+    width: 70%;
+    background-color: #ff000000;
+    height: auto;
+    border-radius: 30px;
+    border: 2px solid #000000;
+    
+    & + .section{
+        padding: 5px 20px;
+        clear: both;
+        margin-top: 10px;
+    }
+}
+
+.profile {
+    float: left;
+    width: 45%;
+    height: auto;
+    margin: -30px 10px 1px -30px;
+    border-radius: 50px;
+}
+
+li{
+    position: relative;
+    padding: 1px 15px;
+    list-style: none;
+
+    /* &:first-child::before{
+        display: inline-block;
+        content: '';
+        background-image: url(./static/jis.jpg);
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        
+    } */
+}
+
