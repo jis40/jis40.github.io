@@ -11,8 +11,6 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 
-
-
 .section{
     display: block;
     margin: 0px auto;
@@ -53,4 +51,38 @@ li{
         
     } */
 }
+
+.contact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contact-icon{  
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    &:hover{
+        transform: scale(1.2);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+#copyText{
+    border: #00000000 1px solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #00000033;
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: auto;
+    color: #000000;
+    font-size: 16px;
+}
+
+#email-icon{
+    cursor: pointer;
+}
+
 
