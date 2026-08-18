@@ -14,7 +14,18 @@ body{
 nav{
     display: flex;
     flex-direction: row;
-    
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .section{
