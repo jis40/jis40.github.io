@@ -1,3 +1,37 @@
+/* Fonte: Eraser Dust */
+@font-face {
+    font-family: 'Eraser';
+    src: url('./fonts/eraser_dust/Eraser.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fonte: Grutch Shaded */
+@font-face {
+    font-family: 'GrutchShaded';
+    src: url('./fonts/grutchshaded/GrutchShaded.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fonte: KG Second Chances (Versão Sketch) */
+@font-face {
+    font-family: 'KGSecondChances';
+    src: url('./fonts/kg_second_chances/KGSecondChancesSketch.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fonte: Miss Chalkboard */
+@font-face {
+    font-family: 'MissChalkboard';
+    src: url('./fonts/miss_chalkboard/Miss Chalkboard.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 *,
 *::before,
 *::after {
@@ -10,7 +44,7 @@ body {
     width: 100vw;
     height: 100vh;
     padding: 60px 0px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'MissChalkboard', 'Times New Roman', Times, serif;
     background-image: url(./static/blackboard_background.jpg);
     background-size: cover;
     color: #ffffff;
@@ -22,10 +56,10 @@ nav {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
-nav ul {
+nav ul{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -33,6 +67,66 @@ nav ul {
     gap: 20px;
     flex-wrap: wrap;
 }
+
+nav ul li a {
+    font-family: 'KGSecondChances', sans-serif;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: #f2f564;
+    position: relative; 
+    padding-bottom: 8px; 
+}
+
+/* Base comum para as duas linhas de giz tortas */
+nav ul li a::before,
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0); 
+    transform-origin: left top; 
+    transition: transform 0.35s ease-in-out;
+}
+
+/* --- PRIMEIRA LINHA (Mais alta e levemente inclinada para cima) --- */
+nav ul li a::before {
+    bottom: 3px;
+    height: 3px; /* Espessura ligeiramente irregular */
+    background-color: #f2f564;
+    
+    /* Corta a linha em um formato de trapézio irregular para parecer giz */
+    clip-path: polygon(0% 20%, 25% 0%, 55% 40%, 75% 10%, 100% 30%, 100% 90%, 50% 70%, 0% -0%);
+    
+    /* Inclina a linha 1.5 graus para parecer torta */
+    transform: scaleX(0) rotate(-1.5deg); 
+}
+
+/* --- SEGUNDA LINHA (Mais baixa, ondulada e com atraso) --- */
+nav ul li a::after {
+    bottom: -4px; 
+    height: 4px; /* Um pouco mais grossa para dar contraste */
+    background-color: rgba(242, 245, 100, 0.95); /* Leve transparência simulando menos força no giz */
+    
+    /* Um desenho de polígono diferente para as linhas não ficarem idênticas */
+    clip-path: polygon(80% 30%, 35% 60%, 70% 95%, 100% 80%, 100% 20%, 85% 5%, 60% 45%, 30% 15%, 0% 40%);
+    
+    /* Inclina para o lado oposto (1 grau) criando o visual desalinhado */
+    transform: scaleX(0) rotate(1deg); 
+    transition-delay: 0.25s; 
+}
+
+/* --- EFEITO HOVER (Garante que a inclinação se mantenha ao expandir) --- */
+nav ul li a:hover::before {
+    transform: scaleX(1) rotate(1deg);
+    transform-origin: left top; 
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1) rotate(-2deg);
+    transform-origin: left top; 
+}
+
 
 .section {
     display: block;
