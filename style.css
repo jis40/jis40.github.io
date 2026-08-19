@@ -1,17 +1,23 @@
-* , *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
     padding: 60px 0px;
     font-family: 'Times New Roman', Times, serif;
+    background-image: url(./static/blackboard_background.jpg);
+    background-size: cover;
+    color: #ffffff;
+
 }
 
-nav{
+nav {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -19,7 +25,7 @@ nav{
     margin-bottom: 40px;
 }
 
-nav ul{
+nav ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -28,7 +34,7 @@ nav ul{
     flex-wrap: wrap;
 }
 
-.section{
+.section {
     display: block;
     margin: 0px auto;
     padding: 0px 10px;
@@ -37,8 +43,10 @@ nav ul{
     height: auto;
     border-radius: 30px;
     border: 2px solid #000000;
-    
-    & + .section{
+        background-color: rgba(255, 255, 255, 0.1); /* Fundo branco com 30% de opacidade */
+
+    z-index: -1;
+    &+.section {
         padding: 5px 20px;
         /* clear: both; */
         margin-top: 10px;
@@ -51,9 +59,10 @@ nav ul{
     height: auto;
     margin: -30px 10px 1px -30px;
     border-radius: 50px;
+    z-index: 99;
 }
 
-li{
+li {
     position: relative;
     padding: 1px 15px;
     list-style: none;
@@ -69,25 +78,26 @@ li{
     } */
 }
 
-.contact{
+.contact {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.contact-icon{  
+.contact-icon {
     width: 30px;
     height: 30px;
     background-size: cover;
     transform: scale(1);
     transition: all 0.3s ease-in-out;
-    &:hover{
+
+    &:hover {
         transform: scale(1.2);
         transition: all 0.3s ease-in-out;
     }
 }
 
-#copyText{
+#copyText {
     border: #00000000 1px solid;
     border-radius: 10px;
     padding: 5px 10px;
@@ -100,11 +110,11 @@ li{
     font-size: 16px;
 }
 
-#email-icon{
+#email-icon {
     cursor: pointer;
 }
 
-.publications > li{
+.publications>li {
     margin-bottom: 10px;
     list-style: none;
 }
